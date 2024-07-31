@@ -34,7 +34,8 @@ const message = {
       let computedStyle = window.getComputedStyle(colorPalettePopup);
       mode = "palette";
       if (computedStyle.display === "none") {
-          colorPalettePopup.style.display = "block";
+          //colorPalettePopup.style.display = "block";
+          document.getElementById('colorPalettePopup').classList.add("d-block");
           document.getElementById('paletteContainer').classList.add("d-none");
           isInPopUp = true;
 

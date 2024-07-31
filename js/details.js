@@ -107,7 +107,6 @@ image8: {
 
 
 function showDetails(imageKey) {
-  //console.log(imageKey)
   document.getElementById('imageChoosePopup').classList.add("d-flex");
 
   const details = imageDetails[imageKey];
@@ -157,7 +156,6 @@ function closeHelpPopup() {
 window.onclick = function(event) {
   if(event.target.matches('#imageChoosePopup')){
     if (!event.target.matches('#details')) {
-      console.log("HERE")
       closeImagePopup();
     }
   }
@@ -169,6 +167,7 @@ window.onclick = function(event) {
       let vaux = ct.get();
       now.blend(vaux, 0, 0, width, height, 0, 0, pix, pix, BLEND);
       pg.image(now,0, 0, width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+      
       let aux = pg.get();
       st.action(aux);
     }

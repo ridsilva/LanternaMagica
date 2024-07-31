@@ -156,7 +156,7 @@ main > .p5Canvas {
       right: 0;
       bottom: 0;
       top: 0;
-      background-image: url(moldura/frame-small.png);
+      background-image: url(frames/frame-small.png);
       background-size: cover;
       background-position: center center;
     }
@@ -193,7 +193,7 @@ main > .p5Canvas {
   z-index: 10;
 }
 .image-choose-popup .details { 
-  background-image: url(moldura/wood-medium.png);
+  background-image: url(frames/wood-medium.png);
   width: 70%;
   min-height: 33%;
   flex-direction: column;
@@ -441,7 +441,7 @@ height: 20px;
   display: none;
   width: 79%;
   height: calc(90vh - 38px );
-  background-image: url(moldura/wood.png);
+  background-image: url(frames/wood.png);
   background-size: cover;
   background-position: center center;
   justify-content: center;
@@ -563,7 +563,7 @@ height: 20px;
 /*End Drawing Page*/
 
 .image-frame {
-  background-image: url('moldura/frame-circle.png');
+  background-image: url('frames/frame-circle.png');
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -604,7 +604,7 @@ height: 20px;
 }
 
 .original-popup .original{
-  background-image: url(moldura/wood-medium.png);
+  background-image: url(frames/wood-medium.png);
   width: 50%;
   min-height: 33%;
   flex-direction: column;

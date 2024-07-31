@@ -86,7 +86,6 @@ function preload() {
   for(let i = 0; i < linesFiles.length; i++){
     lines[i] = loadImage('./lines/' + linesFiles[i]);
   }
-  backgroundD = 0;
 }
 
 function setup() {
@@ -114,6 +113,7 @@ function setup() {
 
     //initialStrokeWeight = lineWeight.value;
     firstTime = true;
+    backgroundD = 0;
   }  
 }
 
@@ -122,6 +122,10 @@ function draw() {
     drawBackground();
     image(pg,0,0);
     image(ct,0,0);
+
+    if(mode === "initial" || mode === "projector"){
+      removeElem(); 
+    }
     
     if(drawing) {
       currentShape.draw(mouseX,mouseY);
@@ -193,7 +197,7 @@ function mouseReleased () {
 /* Related with selecting the icons */
 
 allElements.forEach((element)=>{
-  if(mode != "projector" && mode != "initial"){
+
     element.addEventListener("click",function(){
     
       allElements.forEach((el)=>{
@@ -203,8 +207,13 @@ allElements.forEach((element)=>{
         currentElemt = this;
     });
   
-  }
 });
+
+function removeElem(){
+  if(currentElemt != null){
+    currentElemt.classList.remove("active");
+  }    
+}
 
 function restart(){  
   isMainMenu = false;  
@@ -214,9 +223,12 @@ function restart(){
       intervalId = null;
       //proj.removeEventListener("click", handleClick);
       pg.clear();
+      ct.clear();
       mode = "initial";
-      lineWeight.value = 1;      
-
+      lineWeight.value = 1;  
+      removeElem();          
+      document.getElementById('colorPalettePopup').classList.remove("d-block");
+      document.getElementById("brushSizeContainer").classList.add("d-none");
       document.getElementById('selectedColor').classList.add("d-none");
       document.getElementById('paletteContainer').classList.add("d-none");
   }

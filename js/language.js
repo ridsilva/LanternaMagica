@@ -1,4 +1,4 @@
-let currentLanguage = 'en'; // Default language is English
+let currentLanguage = 'pt'; // Default language is English
 
 const languageData = {
   'en': {
@@ -86,7 +86,6 @@ function loadLanguage(lang) {
   Object.keys(elements).forEach((key) => {
     const elementId = elements[key];
     document.getElementById(elementId).textContent = languageData[lang][key];
-    //console.log(elementId)
   });
   if(lang == "en") {
     document.getElementById("projectorBanner").src = "homePage/lanternEN.gif"

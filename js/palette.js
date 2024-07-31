@@ -81,4 +81,5 @@ const paletteItaly = ['rgba(26,28,21,255)', 'rgba(62,75,27,255)', 'rgba(103,93,7
    });
   });
   document.getElementById('paletteContainer').classList.remove("d-none");
+  document.getElementById('colorPalettePopup').classList.remove("d-block");
 }

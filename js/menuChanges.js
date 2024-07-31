@@ -48,7 +48,7 @@
 document.getElementsByClassName("interactiveToolIcon").forEach((element) => {
   element.addEventListener('click', (el) => {
       let brushSize = el.target.dataset.brushsize
-      if(brushSize === "true" ){//&& mode != "projector" && mode != "initial") {
+      if(brushSize === "true" && mode != "projector" && mode != "initial") {
           document.getElementById("brushSizeContainer").classList.remove("d-none");
       } else {
           document.getElementById("brushSizeContainer").classList.add("d-none");

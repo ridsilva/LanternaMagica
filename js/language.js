@@ -2,7 +2,6 @@ let currentLanguage = 'pt'; // Default language is English
 
 const languageData = {
   'en': {
-    'currentLanguage': 'EN',
     'magicaProj': 'Magica Project',
     'chooseSlide': 'Choose Slide',     
     'close': 'Close',
@@ -28,7 +27,6 @@ const languageData = {
     'colorsH': 'You are able to mix colors in the fill option.'
   },
   'pt': {
-    'currentLanguage': 'PT',
     'magicaProj': 'Projeto Magica',
     'chooseSlide': 'Escolher Slide',
     'close': 'Fechar',
@@ -59,7 +57,6 @@ const languageData = {
 function loadLanguage(lang) {
 
   const elements = {
-    currentLanguage: 'currentLanguage',
     magicaProj : 'magicaProj',
     chooseSlide : 'chooseSlide',
     close:'close',

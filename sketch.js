@@ -58,7 +58,13 @@ let ax;
 
 function keyPressed(){
   if(key==='e'){
-    currentElemt.classList.remove("active");
+    ct.clear();
+  }
+  if(key==='r'){
+    ax = ct.get();
+  }
+  if(key ==='t'){
+    ct.image(ax,0,0);
   }
   if(key === 's'){
     if(mode === "projector" ){

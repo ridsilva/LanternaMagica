@@ -1,1 +1,352 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mágica - Ciência e Espetáculo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
+    <script src="https://scrtwpns.com/mixbox.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+</head>
+<body>
+
+  <!-- Start Navigation Bar-->
+  <div id="navigationBar">
+    <a>
+      <img src="./homePage/Start.png" onclick="showMainMenu()">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="https://www.magica-project.com/" id="magicaProj">Project Magica</a></li>
+
+            <li>     
+              <button id="currentLanguage" onclick="toggleDropdown()">EN <span class="arrow">&#9660;</span></button>
+              <div id="languageDropdown" class="dropdown-content">
+                <a onclick="switchLanguage('en')">EN</a>
+                <a onclick="switchLanguage('pt')">PT</a>
+              </div>
+            </li>
+        </ul>
+    </nav>
+  </div>
+  <!-- End Navigation Bar-->
+
+  <!-- Start MainMenu-->
+  <div id="mainMenu">  
+    <div id="magicaContainer">
+      <img onCLick="slideOptions()" src="./homePage/lanternEN.gif" id="projectorBanner" class="projector-banner" alt="Start">
+    </div>
+
+    <div class="logos">
+      <img src="./homePage/logos.png" alt="All logos">
+    </div>
+
+  </div>
+  <!-- End MainMenu-->
+
+  <!-- Page to choose Slide-->
+  <div id="imageChoosePopup" class="image-choose-popup">
+    <div id="details" class="details d-flex">
+      <div id="imageFrame" class="image-frame">
+        <img id="detail-image" src="" alt="Detail">
+      </div>
+      
+      <div class="bt-slideChoose">
+        <p class="txt-slideChoose" id="detail-text"></p>
+        <button id="chooseSlide" class="wood-button2" onclick="chooseSlide()">Submit</button>
+        <button id="close" class="wood-button2" onclick="closeImagePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  
+    
+  <div id="slideChoose">
+    <div class="text-container">
+      <h1 id="ChooseImgMsg">Welcome lanternist!</h1>
+      <p id="fstParag">To start your journey, select one of the available slides to be painted.</p>
+      <p id="sndParag">Click on each slide to view it more closely, and then click "Chose Slide" to finalize your choice and begin working.</p>
+    </div>
+
+    <div class="grid">
+      <div class="grid-item" onclick="showDetails('image0')">
+        <img src="./img-small/image0.png" alt="Image 0">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image1')">
+        <img src="./img-small/image1.png" alt="Image 1">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image2')">
+        <img src="./img-small/image2.png" alt="Image 2">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image3')">
+        <img src="./img-small/image3.png" alt="Image 3">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image4')">
+        <img src="./img-small/image4.png" alt="Image 4">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image5')">
+        <img src="./img-small/image5.png" alt="Image 5">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image6')">
+        <img src="./img-small/image6.png" alt="Image 6">
+      </div>
+  
+      <div class="grid-item" onclick="showDetails('image7')">
+        <img src="./img-small/image7.png" alt="Image 7">
+      </div>
+      
+      <div class="grid-item" onclick="showDetails('image8')">
+        <img src="./img-small/image8.png" alt="Image 8">
+      </div>
+      <!-- Add more grid items as needed -->
+    </div>
+  </div>
+
+    <div id="originalPopup" class="original-popup">
+      <div id="original" class="original d-flex">
+        <img id="original-image" src="" alt="Original">
+        <p class="txt-original" id="original-text"></p>
+        <div class="bt-slideChoose" >
+          <button id="close" class="wood-button2" onclick="closeOriginalPopup()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="helpPopup" class="help-popup">
+      <div id="help" class="help d-flex">
+        <div class="help-content">
+          <div class="pairInfo">
+            <img src="Icons-White/palette.png" alt="Palette">
+            <p class="text" id="paletteH">This icon allows the user to choose a palette to paint with. If in the middle of the painting another palette is chosen all progress will be lost.</p>
+          </div>
+          <div class="pairInfo">
+            <img src="Icons-White/undo.png" alt="Undo" id="undoI">
+            <p  class="text" id="undoH">This icon allows the user to undo their last modification. It is only possible to perform x undo's</p>
+          </div>
+          <div class="pairInfo">
+            <img src="Icons-White/redo.png" alt="Redo" id="redoI">
+            <p  class="text" id="redoH">This icon allows the user to redo what was undone. It is only possible to redo if an undo had been previously been done.</p>
+          </div>
+          <div class="pairInfo">
+            <img src="Icons-White/final.png" alt="Final">
+            <p  class="text" id="finalH">Clicking in "Final" will animate the painting.</p>
+          </div>
+          <div class="pairInfo">
+            <img src="Icons-White/save.png" alt="Save">
+            <p  class="text" id="saveH">If you press the "s" key before clicking "Final," only an image will be saved. After clicking "Final," a GIF will be saved.</p>
+          </div>
+          <div class="pairInfo">
+            <img src="Icons-White/!.png" alt="Colors">
+            <p  class="text" id="colorsH">You are able to mix colors in the fill option.</p>
+          </div>
+        </div>
+
+        <div class="bt-slideChoose" >
+          <button id="close" onclick="closeHelpPopup()">Close</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- Drawing Page-->
+  <div id="app">
+    <div id="canvasContainer"></div>
+
+    <!--div id="canvasMixContainer"></div-->
+
+    <!-- Available palettes -->
+    <div id="colorPalettePopup">     
+       
+      <div class="palette-option-container">
+      <div class="palette-option">
+        <input type="radio" class="d-none" name="palette" id="palette1-radio">
+        <label for="palette5" id="paletteIt" class="palette-label">Italian 1750-1800</label>
+        <div class="palette-colors">
+          <div class="palette-color-option" style="background-color: rgba(26,28,21,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(62,75,27,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(103,93,78,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(66,81,105,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(26,73,88,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(152,122,131,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(213,116,106,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(116,40,15,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(232,96,0,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(255,199,61,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(220,192,38,1);"></div>
+          <div class="palette-color-option" style="background-color: rgb(193,143,26,1);"></div>
+        </div>
+      </div>
+
+      <div class="palette-option">
+        <input type="radio" class="d-none" name="palette" id="palette2-radio">
+        <label for="palette4" class="palette-label">P. Carpenter 1822-35</label>
+        <div class="palette-colors">
+          <div class="palette-color-option" style="background-color: rgba(37,37,43,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(87,135,101,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(0,97,159,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(117,100,104,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(180,28,0,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(215,110,4,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(181,128,68,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(168,153,93,1);"></div>
+          <div class="palette-color-option" style="background-color: rgb(217,194,37,1);"></div>
+        </div>
+      </div>
+      
+      <div class="palette-option">
+        <input type="radio" class="d-none" name="palette" id="palette3-radio">
+        <label for="palette3" class="palette-label">Carpenter & Westley c1838-1900+</label>
+        <div class="palette-colors">
+          <div class="palette-color-option" style="background-color: rgba(35,34,38,1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(120,70,11, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(37,107,53, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(37,101,148, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(173,171,193, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(234,101,157, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(194,75,0, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(197,200,78, 1);"></div>
+        </div>
+      </div>
+
+      <div class="palette-option">
+        <input type="radio" class="d-none" name="palette" id="palette4-radio">
+        <label for="palette2" class="palette-label">W.E. & F. Newton c1852-57</label>
+        <div class="palette-colors">
+          <div class="palette-color-option" style="background-color: rgba(34,33,39, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(78,67,50, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(157,194,161, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(3,155,216, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(252,69,107, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(210,156,123, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(212,73,0, 1);"></div>
+          <div class="palette-color-option" style="background-color: rgba(252,248,58, 1);"></div>
+        </div>
+      </div>
+      
+      <div class="palette-option">
+        <input type="radio" class="d-none" name="palette" id="palette5-radio" checked>
+          <label for="palette1" class="palette-label">Lapierre c1860-1900+</label>
+          <div class="palette-colors">
+            <div class="palette-color-option" style="background-color: rgba(46,54,51,1);"></div>
+            <div class="palette-color-option" style="background-color: rgba(123,66,4,1);"></div>
+            <div class="palette-color-option" style="background-color: rgba(131,192,52,1);"></div>
+            <div class="palette-color-option" style="background-color: rgba(24,82,244,1);"></div>
+            <div class="palette-color-option" style="background-color: rgba(253,102,171,1);"></div>
+            <div class="palette-color-option" style="background-color: rgba(241,220,11,1);"></div>
+          </div>
+      </div>
+
+        <!-- Add more palettes here -->
+      </div>
+    </div>
+
+  <!-- Start of menu-->
+      <div id="menu">
+
+        <!-- Tools/Ferramentas-->
+    <div class="containerType">
+      <div class="container-title" id="ContainerT">Tools</div>
+
+      <div class="icons">
+        <div class="interactiveToolIcon" id="pen">
+          <div id="IconBrush" class="title">Brush</div>
+          <img class="menu-img" data-brushSize="true" src="./Icons-White/brush.png"/>
+          </div>         
+
+        <div class="interactiveToolIcon" id="bucket">
+          <div id="IconFill" class="title">Fill</div>
+          <img class="menu-img" src="./Icons-White/bucket.png"/>
+        </div>
+
+        <div class="interactiveToolIcon" id="eraser">
+          <div id="IconEraser" class="title">Eraser</div>
+          <img class="menu-img" data-brushSize="true" src="./Icons-White/eraser.png"/>
+        </div>
+    </div>
+
+    <!--Brush Size-->
+    <div id="brushSizeContainer" class="container d-none">
+      <input id="lineWeight" type="range" min="1" max="50" value="1"/>
+      <span id="lineWeightLabel"> </span>
+    </div>
+
+  </div>
+
+        <!-- Colors/Cores-->
+        <div class="containerType">
+          <div class="container-title" id="ContainerC">Colors</div>
+
+          <div class="icons">
+            <div class="popUpIcon" id="changePalette">
+              <div id="IconPalette" class="title">Palette</div>
+              <img class="menu-img" src="./Icons-White/palette.png">
+            </div>
+
+            <div id="selectedColor" class="d-none"></div>
+            
+          </div>        
+        </div>
+
+      <!-- Actions/Ações-->
+      <div class="containerType">
+        <div class="container-title" id="ContainerA">Actions</div>
+
+        <div class="icons">
+            <!--div class="actionIcon" id="saveIcon">
+            <div id="IconSave" class="title">Save</div>
+            <i class="far fa-save"></i>
+          </div-->
+
+          <div class="actionIcon" id="undo">
+            <div id="IconUndo" class="title">Undo</div>
+            <img class="menu-img" id="undoIcon" src="./Icons-White/undo.png"/>
+          </div>
+
+          <div class="actionIcon" id="redo">
+            <div id="IconRedo" class="title">Redo</div>
+            <img class="menu-img" id="redoIcon" src="./Icons-White/redo.png"/>
+          </div>
+  
+        </div>
+
+      </div>  
+      
+      </div>
+      <!-- End of menu-->
+
+  <div id="paletteContainer" class="d-none">
+    <div class="palette-selected">
+        <div class="palette-selected-colors">
+            <div class="palette-selected-option"></div>
+        </div>
+    </div>
+  </div>
+  <!--End of palette used to paint-->  
+
+ <button id="helpBt" class="wood-button" onclick="showHelp()">?</button>
+  <button id="finalBt" class="wood-button" onclick="final()">Final</button>
+  <button id="endBt" class="wood-button" onclick="end()">Leave</button>
+  <button id="originalBt" class="wood-button" onclick="showOriginal()">Original</button>
+</div>
+
+
+<script src="js/menuChanges.js"></script>
+<!--script src="sketch.js"></script>
+<script src="js/events.js"></script>
+<script src="js/flood.js"></script>
+<script src="js/palette.js"></script>
+<script src="js/background.js"></script>
+<script src="js/shape.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/language.js"></script>
+<script src="js/details.js"></script>
+<script src="js/mix.js"></script>
+<script src="js/stack.js"></script-->
+
+</body>
+</html>

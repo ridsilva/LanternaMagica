@@ -58,27 +58,27 @@ const imageDetails = {
 
 const originalInfo = {
 image0: {
-  src: './originals/image0.jpg',
+  src: './originals/image0.gif',
   pt: 'Este slide pertence à coleção da Cinemateca Portuguesa - Museu do Cinema',
   en: 'This slide belongs to the colection of the Cinemateca Portuguesa - Cinema Museum'
 },
 image1: {
-  src: './originals/image1.jpg',
+  src: './originals/image1.gif',
   pt: 'Este slide pertence à coleção do Museu de Ciência da Universidade de Coimbra (MCUC). Foi fabricado por J.G.A. Chevallier e é originário da França',
   en: 'This slide belongs to the colection of the Science Museum of the University of Coimbra (MCUC). It was manufactured by J.G.A. Chevallier and originated from France'
 },
 image2: {
-  src: './originals/image2.jpg',
+  src: './originals/image2.gif',
   pt: 'Este slide pertence à coleção da Cinemateca Portuguesa - Museu do Cinema',
   en: 'This slide belongs to the colection of the Cinemateca Portuguesa - Cinema Museum'
 },
 image3: {
-  src: './originals/image3.jpg',
+  src: './originals/image3.gif',
   pt: 'Este slide pertence à coleção da Cinemateca Portuguesa - Museu do Cinema',
   en: 'This slide belongs to the colection of the Cinemateca Portuguesa - Cinema Museum'
 },
 image4: {
-  src: './originals/image4.jpg',
+  src: './originals/image4.gif',
   pt: 'Este slide pertence à coleção do Museu de Ciência da Universidade de Coimbra (MCUC). Foi fabricado por J.G.A. Chevallier e é originário da França',
   en: 'This slide belongs to the colection of the Science Museum of the University of Coimbra (MCUC). It was manufactured by J.G.A. Chevallier and originated from France'
 },
@@ -99,7 +99,7 @@ image7: {
 
 },
 image8: {
-  src: './originals/image8.jpg',    
+  src: './originals/image8.gif',    
   pt: 'Este slide pertence à coleção do Museu de Ciência da Universidade de Coimbra (MCUC). Foi fabricado por J.G.A. Chevallier e é originário da França',
   en: 'This slide belongs to the colection of the Science Museum of the University of Coimbra (MCUC). It was manufactured by J.G.A. Chevallier and originated from France'
 }

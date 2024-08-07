@@ -2,56 +2,56 @@ const imageDetails = {
   image0: {
     src: './preview/animation0.gif',
     name: 'image0.png',
-    pt: 'Génio - baseado num slide da Cinemateca Portuguesa - Museu do Cinema',
-    en: 'Genie - based on a slide from Cinemateca Portuguesa - Cinema Museum'
+    pt: 'Génio - baseado no diapositivo da Cinemateca Portuguesa - Museu do Cinema (CPMC-PC3302/007), produzido por desconhecido, Inglaterra, ca.1860-1900.',
+    en: 'Genie - based on the slide from the Portuguese Cinematheque - Museum of Cinema (CPMC-PC3302/007), produced by unknown, England, ca.1860-1900.'
   },
   image1: {
     src: './preview/animation1.gif',
     name: 'image1.png',
-    pt: 'Flores - baseado num slide do Museu de Ciência da Universidade de Coimbra (MCUC)',
-    en: 'Flowers - based on a slide from the Science Museum of the University of Coimbra (MCUC)'
+    pt: 'Flores - baseado no diapositivo do Museu de Ciência da Universidade de Coimbra (MCUC-FIS.2120), produzido por J.G.A. Chevallier, França, ca.1800-1840.',
+    en: 'Flowers - based on the slide from the Science Museum of the University of Coimbra (MCUC-FIS.2120), produced by  J.G.A. Chevallier, France, ca.1800-1840.'
   },
   image2: {
     src: './preview/animation2.gif',
     name: 'image2.png',
-    pt: 'Circo - baseado num slide da Cinemateca Portuguesa - Museu do Cinema',
-    en: 'Circus - based on a slide from Cinemateca Portuguesa - Cinema Museum'
+    pt: 'Circo - baseado no diapositivo da Cinemateca Portuguesa - Museu do Cinema (CPMC-PC3300/002), produzido por desconhecido, Inglaterra, ca.1860-1900.',
+    en: 'Circus - based on the slide from the Portuguese Cinematheque - Museum of Cinema (CPMC-PC3300/002), produced by unknown, England, ca.1860-1900.'
   },
   image3: {
     src: './preview/animation3.gif',
     name: 'image3.png',
-    pt: 'O Duende e a couve - baseado num slide da Cinemateca Portuguesa - Museu do Cinema',
-    en: 'The Elf and the cabbage - based on a slide from Cinemateca Portuguesa - Cinema Museum'
+    pt: 'O Duende e a couve - baseado no diapositivo da Cinemateca Portuguesa - Museu do Cinema (CPMC-PC0446), produzido por desconhecido, Inglaterra, ca.1860-1900.',
+    en: 'The Elf and the cabbage -  based on the slide from the Portuguese Cinematheque - Museum of Cinema (CPMC-PC0446), produced by unknown, England, ca.1860-1900.'
   },
   image4: {
     src: './preview/animation4.gif',
     name: 'image4.png',
-    pt: 'Monstro - baseado num slide do Museu de Ciência da Universidade de Coimbra (MCUC)',
-    en: 'Monster - based on a slide from the Science Museum of the University of Coimbra (MCUC)'
+    pt: 'Monstro - baseado no diapositivo do Museu de Ciência da Universidade de Coimbra (MCUC-FIS.2122), produzido por J.G.A. Chevallier, França, ca.1800-1840.',
+    en: 'Monster - based on the slide from the Science Museum of the University of Coimbra (MCUC-FIS.2122), produced by  J.G.A. Chevallier, France, ca.1800-1840. '
   },
   image5: {
     src: './preview/animation5.gif',
     name: 'image5.png',
-    pt: 'A cabeça de porco - baseado num slide do Museu Nacional de História Natural e da Ciência (MUHNAC)',
-    en: 'The pig\'s\ head - based on a slide from the National Museum of Natural History and Science (MUHNAC)'
+    pt: 'A cabeça de porco - baseado no diapositivo do Museu Nacional de História Natural e da Ciência da Universidade de Lisboa (MUL-MUHNAC-UL000068), produzido por desconhecido, Inglaterra, ca.1870-1900.',
+    en: 'The pig\'s\ head - based on the slide from the National Museum of Natural History and Science of the University of Lisbon (MUL-MUHNAC-UL000068), produced by unknown, England, ca.1870-1900.'
   },    
   image6: {
     src: './preview/animation6.gif',
     name: 'image6.png',
-    pt: 'O ganso - baseado num slide do Museu de Ciência da Universidade de Coimbra (MCUC)',
-    en: 'The goose - based on a slide from Cinemateca Portuguesa - Cinema Museum'
+    pt: 'O ganso - baseado no diapositivo do Museu Nacional de História Natural e da Ciência da Universidade de Lisboa (MUL-MUHNAC-UL000069), produzido por desconhecido, Inglaterra, ca.1870-1900.',
+    en: 'The goose - based on the slide from the National Museum of Natural History and Science of the University of Lisbon (MUL-MUHNAC-UL000069), produced by unknown, England, ca.1870-1900.'
   },
   image7: {
     src: './preview/animation7.gif',
     name: 'image7.png',
-    pt: 'A estátua - baseado num slide do Museu Nacional de História Natural e da Ciência (MUHNAC)',
-    en: 'The statue - based on a slide from the National Museum of Natural History and Science (MUHNAC)'
+    pt: 'A estátua - baseado no diapositivo do Museu Nacional de História Natural e da Ciência da Universidade de Lisboa (MUL-MUHNAC-UL000067), produzido por desconhecido, Inglaterra, ca.1870-1900.',
+    en: 'The statue - based on the slide from the National Museum of Natural History and Science of the University of Lisbon (MUL-MUHNAC-UL000067), produced by unknown, England, ca.1870-1900.'
   },
   image8: {
     src: './preview/animation8.gif',
     name: 'image8.png',
-    pt: 'O general - baseado num slide do Museu de Ciência da Universidade de Coimbra (MCUC)',
-    en: 'The general - based on a slide from the Science Museum of the University of Coimbra (MCUC)'
+    pt: 'O general - baseado no diapositivo do Museu de Ciência da Universidade de Coimbra (MCUC-FIS.2122), produzido por produzido por J.G.A. Chevallier, França, ca.1800-1840.',
+    en: 'The general - based on the slide from the Science Museum of the University of Coimbra (MCUC-FIS.2122), produced by  J.G.A. Chevallier, France, ca.1800-1840.'
   }
   // Add more image details as needed
 };

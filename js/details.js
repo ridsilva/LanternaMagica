@@ -88,7 +88,7 @@ image5: {
   en: 'This slide belongs to the colection of the National Museum of Natural History and Science (MUHNAC)'
 },
 image6: {
-  src: './originals/image6.jpg',
+  src: './originals/image6.gif',
   pt: 'Este slide pertence à coleção do Museu Nacional de História Natural e da Ciência (MUHNAC)',
   en: 'This slide belongs to the colection of the National Museum of Natural History and Science (MUHNAC)'
 },
@@ -173,3 +173,40 @@ window.onclick = function(event) {
     }
   }
 }
+
+window.ontouchend = function(event) { 
+  
+  if(event.target.matches('#myCanvas')){
+    alert("Touched")
+     //ensure that lines go back to normal
+     let now = pg.get();
+     let vaux = ct.get();
+     now.blend(vaux, 0, 0, width, height, 0, 0, pix, pix, BLEND);
+     pg.image(now,0, 0, width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+     
+     let aux = pg.get();
+     st.action(aux);
+  }
+}
+/**
+document.addEventListener('DOMContentLoaded', function() {
+  const canvas = document.querySelector('#canvasContainer');
+
+  if (canvas) {
+    // Attach the 'touchend' event listener only to the canvas
+    console.log("INSIDE")
+    canvas.addEventListener('touchend', touchEnded);
+  } else {
+    console.error('Canvas element not found!');
+  }
+});
+
+function touchEnded(event) {
+  // Make sure the touch event is happening on the canvas
+  if (event.target.matches('#myCanvas')) {
+    alert("Touch ended on canvas!");
+    
+    // Prevent default touch behavior (optional, if necessary)
+    event.preventDefault();
+  }
+}**/

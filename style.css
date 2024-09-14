@@ -617,6 +617,11 @@ height: 35px;
 font-size: 30px;
 text-align: center;
 }
+
+.palette-color-option {
+width: 20px;
+height: 20px;
+}
 }
 
 /*Original Pop Up*/

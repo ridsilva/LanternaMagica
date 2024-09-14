@@ -2,7 +2,7 @@ let currentLanguage = 'pt'; // Default language is English
 
 const languageData = {
   'en': {
-    'magicaProj': 'Magica Project',
+    'magicaProj': 'MAGICA Project',
     'chooseSlide': 'Choose Slide',     
     'close': 'Close',
     'ChooseImgMsg': 'You are now a lanternist!',   
@@ -27,7 +27,7 @@ const languageData = {
     'colorsH': 'You are able to mix colors in the fill option.'
   },
   'pt': {
-    'magicaProj': 'Projeto Magica',
+    'magicaProj': 'Projeto MAGICA',
     'chooseSlide': 'Escolher Slide',
     'close': 'Fechar',
     'ChooseImgMsg': 'Tu és um lanternista!',

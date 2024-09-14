@@ -1,703 +1,734 @@
 @font-face {
-    font-family: specialElite;
-    src: url(fonts/SpecialElite-Regular.ttf);
+  font-family: specialElite;
+  src: url(fonts/SpecialElite-Regular.ttf);
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html{
-    height: 100%;
+  height: 100%;
 }
-  
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    position: relative;
-    font-family: sans-serif;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  font-family: sans-serif;
+  overflow: auto;
 }
 
 main > .p5Canvas {
-    display: none;
+  display: none;
 }
 #canvasContainer > .p5Canvas {
-    display: inline;
+  display: inline;
 }
 .d-block { 
-    display: block !important;
+  display: block !important;
 }
 .d-flex { 
-    display: flex !important;
+  display: flex !important;
 }
 .d-none { 
-    display: none !important;
+  display: none !important;
 }
 .background-size-cover {
-    background-size: cover !important;
+  background-size: cover !important;
 }
 /* Navigation Bar */
 #navigationBar {
-    width: 100vw;
-    background-color: #72b2b4;
-    display:flex;
-    justify-content:end;
+  width: 100vw;
+  background-color: #72b2b4;
+  display:flex;
+  justify-content:end;
 }
 
 #navigationBar img{
-    height:35px;
-    position:absolute;
-    left:0px;
-    margin-top: 2px;
+  height:35px;
+  position:absolute;
+  left:0px;
+  margin-top: 2px;
 }
 
 #currentLanguage {
-    padding: 10px 20px;
-    border: none;
-    background-color: #f0f0f000;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f000;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 #currentLanguage .arrow {
-    margin-left: 5px;
+  margin-left: 5px;
 }
-  
+
 #languageDropdown {
-    display: none;
-    position: absolute;
-    background-color: #66b1b3;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #66b1b3;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
-  
+
 #languageDropdown a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
-  
+
 #navigationBar nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 
 #navigationBar nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    display: block;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  display: block;
 }
 
 #navigationBar nav ul li a:hover , #currentLanguage:hover{
-    background-color: #8cdfe1;
-    color: white;
-    cursor: pointer;
+  background-color: #8cdfe1;
+  color: white;
+  cursor: pointer;
 }
 /* End navigation bar */
 
 /* Choose slide Page*/
 #slideChoose {
-    display: none;
-    grid-template-columns: 1fr 2fr; /* Two columns, first for text, second for grid */
-    grid-template-rows: auto; /* Adjusts row height automatically */
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 38px);
-    width: 100vw;
-    gap:100px;
+  display: none;
+  grid-template-columns: 1fr 2fr; /* Two columns, first for text, second for grid */
+  grid-template-rows: auto; /* Adjusts row height automatically */
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 38px);
+  width: 100vw;
+  gap:100px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column; /* Stack the text elements vertically */
+  justify-content: flex-start; /* Align text at the top */
+  text-align: center;
+  width: 33%;
   }
 
-  .text-container {
-    display: flex;
-    flex-direction: column; /* Stack the text elements vertically */
-    justify-content: flex-start; /* Align text at the top */
-    text-align: center;
-    width: 33%;
-    }
+  #ChooseImgMsg{
+      color: #72b2b4;
+  }
 
-    #ChooseImgMsg{
-        color: #72b2b4;
+  .grid {
+      width: 40%;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(3, auto);
+      justify-content: center;
+      align-content: center;
+      border: 0;
+      gap: 10px;
     }
-
-    .grid {
-        width: 40%;
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(3, auto);
-        justify-content: center;
-        align-content: center;
-        border: 0;
-        gap: 10px;
-      }
-      .grid-item {
-        position: relative;
-        border: 0;
-      }
-      .grid-item:hover, #magicaContainer img#projectorBanner:hover, #iconApp:hover{
-        cursor: pointer;
-      }
-      .grid-item::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        background-image: url(frames/frame-small.png);
-        background-size: cover;
-        background-position: center center;
-      }
-      .grid-item:nth-child(2)::after,
-      .grid-item:nth-child(5)::after,
-      .grid-item:nth-child(8)::after {
-        transform: rotateY(180deg);
-      }        
-      .grid img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        overflow: hidden;
-        border-radius: 50%;
-        padding: 24px;
-        box-sizing: border-box;
-      }
+    .grid-item {
+      position: relative;
+      border: 0;
+    }
+    .grid-item:hover, #magicaContainer img#projectorBanner:hover, #iconApp:hover{
+      cursor: pointer;
+    }
+    .grid-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-image: url(frames/frame-small.png);
+      background-size: cover;
+      background-position: center center;
+    }
+    .grid-item:nth-child(2)::after,
+    .grid-item:nth-child(5)::after,
+    .grid-item:nth-child(8)::after {
+      transform: rotateY(180deg);
+    }        
+    .grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 50%;
+      padding: 24px;
+      box-sizing: border-box;
+    }
 
 /* End slide Page*/
 
 /* Choose slide Pop Up */
-  .image-choose-popup { 
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 10;
-  }
-  .image-choose-popup .details { 
-    background-image: url(frames/wood-medium.png);
-    width: 70%;
-    min-height: 33%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-position: center;
-    background-size: cover;
-  }
-  .image-choose-popup .details img { 
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-  }
-  .image-choose-popup #detail-text{
-    color:white;
-    align-self: start;
-    position: relative;
-    display: inline;
-    float: left;
-  }
-  .image-choose-popup button { 
-    position: relative;
-    padding: 10px 20px;
-    bottom: auto;
-    right: 0px;
-    border-radius: 10%;
-  }
-  .bt-slideChoose{
-    align-self: end;
-    width: 100%;
-    text-align: right;
-  }
+.image-choose-popup { 
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+.image-choose-popup .details { 
+  background-image: url(frames/wood-medium.png);
+  width: 70%;
+  min-height: 33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.image-choose-popup .details img { 
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.image-choose-popup #detail-text{
+  color:white;
+  align-self: start;
+  position: relative;
+  display: inline;
+  float: left;
+}
+.image-choose-popup button { 
+  position: relative;
+  padding: 10px 20px;
+  bottom: auto;
+  right: 0px;
+  border-radius: 10%;
+}
+.bt-slideChoose{
+  align-self: end;
+  width: 100%;
+  text-align: right;
+}
 /* End Choose slide Pop Up */
 
 /* Container */
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Menu */
 #menu {
-    display: none;
-    height: 55px;
-    flex-direction: row;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    align-items: stretch;
-    margin-left: 100px;
+  display: none;
+  height: 55px;
+  flex-direction: row;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  align-items: stretch;
+  margin-left: 100px;
 }
 
 .interactiveToolIcon,.actionIcon,.checkboxContainer, .changingDrawing, .popUpIcon, #selectedColor{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin: 3px;
-    padding:7px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 3px;
+  padding:7px;
+  position: relative;
 }
 
 .title {
-    margin-bottom: 10px; /* Space between title and icon */
-    font-size: 12px; 
-    text-align: center;
-    visibility: hidden;
-    top: 100%;
-    position: absolute;
-    color: white;
+  margin-bottom: 10px; /* Space between title and icon */
+  font-size: 12px; 
+  text-align: center;
+  visibility: hidden;
+  top: 100%;
+  position: absolute;
+  color: white;
 }
 .checkboxContainer {
-    font-size:12px;
+  font-size:12px;
 }
 .interactiveToolIcon:hover, .actionIcon:hover, .popUpIcon:hover{
-    background-color: rgb(119, 35, 0);
-    border-radius: 50%;
+  background-color: rgb(119, 35, 0);
+  border-radius: 50%;
 }
 .actionIcon:hover .title, .interactiveToolIcon:hover .title, .popUpIcon:hover .title{
-    visibility: visible;
+  visibility: visible;
 }
 .active {
-    background: #972f02;
-    border-radius: 50%;
+  background: #972f02;
+  border-radius: 50%;
 }
 .menu-img {
-    height: 35px;
+  height: 35px;
 }
 #undoIcon, #redoIcon{
-  height: 20px;
+height: 20px;
 }
 /* Palette Popup */
 #colorPalettePopup {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #ffffff00;
-    z-index: 2; /* Ensure popup is on top of other elements */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff00;
+  z-index: 2; /* Ensure popup is on top of other elements */
 }
 
 /* Style for the palette container */
 .palette-option-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 /* Style for each palette-option */
 .palette-option {
-    margin: 10px;
-    position: relative;
+  margin: 10px;
+  position: relative;
 }
 
 /* Style for the palette label */
 .palette-label {
-    margin-left: 5px;
-    font-weight: bold;
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 /* Style for the palette colors */
 .palette-colors {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Style for each palette option */
 .palette-color-option {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: solid #2b1007;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid #2b1007;
 }
 
 /* Brsuh Size*/
 #lineWeightLabel {
-    margin-right: 5px;
-    font-size: 12px;
+  margin-right: 5px;
+  font-size: 12px;
 }
 
 /*Palette used to paint*/
 #paletteContainer {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 165px;
-    z-index: 1; /* Ensure it's above other elements */
-    overflow-y: auto; /* Allow scrolling if the palette container is taller than the viewport */
-    float:left;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 165px;
+  z-index: 1; /* Ensure it's above other elements */
+  overflow-y: auto; /* Allow scrolling if the palette container is taller than the viewport */
+  float:left;
 }
 
 .palette-selected {
-    margin: 10px;
-    padding: 10px; 
-    position: relative;
+  margin: 10px;
+  padding: 10px; 
+  position: relative;
 }
 
 .palette-selected-colors {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .palette-selected-option {
-    width: 45px;
-    height: 45px;
-    margin-right: 5px;
-    border-radius: 5px;
-    border: 2px solid black; /* Add black border */
-    border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 2px solid black; /* Add black border */
+  border-radius: 50%;
 }
 
 /* Additional styling for the default palette */
 #paletteContainer .palette {
-    margin: 10px; /* Add margin for spacing between palette options */
+  margin: 10px; /* Add margin for spacing between palette options */
 }
 
 #paletteContainer .palette-label {
-    margin-left: 5px; /* Add margin for spacing between label and checkbox */
+  margin-left: 5px; /* Add margin for spacing between label and checkbox */
 }
 
 
 @media (max-width:900px) {
-    body{
-        align-items: flex-start;
-    }
-    
+  body{
+      align-items: flex-start;
+  }
+  
 }
 
 /*Main menu*/
 #mainMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: calc(100vh - 38px);
-    overflow: hidden;
-    background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 38px);
+  overflow: hidden;
+  background: black;
 }
 
 .logos {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: fit-content;
-    background-color: #fff;
-    padding: 10px;
-    flex-wrap: wrap;
-    flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: fit-content;
+  background-color: #fff;
+  padding: 10px;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
 }
 
 .logos img {
-    width: 100vw;
+  width: 100vw;
 }
 
 #magicaContainer {
-    position: relative;
-    width: 100%;
-    margin: auto;
+  position: relative;
+  width: 100%;
+  margin: auto;
 }
 
 #magicaContainer img#projectorBanner {
-    height: auto;
-    display: block;
-    width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
 }
 
 .button-overlay {
-    position: absolute;
-    transform: translate(65%, -280%);
-    text-align: center;
-    font-size: 40px;
+  position: absolute;
+  transform: translate(65%, -280%);
+  text-align: center;
+  font-size: 40px;
 }
 
 @media (max-width: 600px) {
-    .button-overlay {
-        font-size: 0.8em;
-    }
+  .button-overlay {
+      font-size: 0.8em;
+  }
 }
 /*End Main menu*/
 
 /*Drawing Page*/
 #app{
-    display: none;
-    width: 79%;
-    height: calc(90vh - 38px );
-    background-image: url(frames/wood.png);
-    background-size: cover;
-    background-position: center center;
-    justify-content: center;
-    align-items: center;
-    /* border: 53px solid white; */
-    box-sizing: border-box;
-    margin-top: 40px;
-    position: relative;
+  display: none;
+  width: 85%;
+  height: calc(90vh - 38px );
+  background-image: url(frames/wood.png);
+  background-size: cover;
+  background-position: center center;
+  justify-content: center;
+  align-items: center;
+  /* border: 53px solid white; */
+  box-sizing: border-box;
+  margin-top: 40px;
+  position: relative;
 }
 #app #menu {
-    position: absolute;
-    top: 15px;
-    flex-direction: column;
-    right: 15px;
-    gap: 10px;
-  }
+  position: absolute;
+  top: 15px;
+  flex-direction: column;
+  right: 15px;
+  gap: 10px;
+}
 #helpBt{
-    bottom: 20px;
-    left: 20px;
-    padding: 5px 10px;
+  bottom: 20px;
+  left: 20px;
+  padding: 5px 10px;
 }
 
 #originalBt{
-    bottom: 20px;
-    right: 20px;
-    padding: 5px 10px;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 10px;
 }
 
 #finalBt{
-    display:flex;
-    bottom: 80px;
-    right: 20px;
-    padding: 5px 10px;
+  display:flex;
+  bottom: 80px;
+  right: 20px;
+  padding: 5px 10px;
 }
 
 #endBt{
-    display:none;
-    bottom: 80px;
-    right: 20px;
-    padding: 5px 10px;
+  display:none;
+  bottom: 80px;
+  right: 20px;
+  padding: 5px 10px;
 }
 
 #app .containerType{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Selected Color*/
 #selectedColor {
-    background-color: rgba(0, 0, 0, 0);
-    height: 16px;
-    width: 16px;
-    margin-right: 10px;
-    border-radius: 50%;
-    border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0);
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
 }
 /* Canvas */
 #canvasContainer {
-    display: flex;
-    width: 900px;
-    justify-content: center;
+  display: flex;
+  width: 900px;
+  justify-content: center;
 }
 
 #canvasMixContainer {
-    display: flex;
-    width: 900px;
-    justify-content: center;
+  display: flex;
+  width: 900px;
+  justify-content: center;
 }
 #canvasMixContainer canvas {
-    border-radius: 50%;
-    border: outset #2b1007;
-    border-width: 5px;
-  }
+  border-radius: 50%;
+  border: outset #2b1007;
+  border-width: 5px;
+}
 
 #canvasContainer canvas {
-    border-radius: 50%;
-    border: outset #2b1007;
-    border-width: 5px;
-  }
-  
+  border-radius: 50%;
+  border: outset #2b1007;
+  border-width: 5px;
+}
+
 .wood-button {
-    border-radius: 15%;
-    font-size: 25px;
-    position: absolute;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    font-family: specialElite;
-    border-color: #772300;
-    background-color: #ff62007a;;
+  border-radius: 15%;
+  font-size: 25px;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  font-family: specialElite;
+  border-color: #772300;
+  background-color: #ff62007a;;
 }
 
 
 .wood-button2{
-    background-color: #ff63027a;
-    color: white;
-    cursor: pointer;
-    font-family: specialElite;
-    border-color: #772300;
+  background-color: #ff63027a;
+  color: white;
+  cursor: pointer;
+  font-family: specialElite;
+  border-color: #772300;
 }
 
 .container-title {
-    position: relative;
-    font-size: 40px;
-    font-weight: bold;
-    color: #ffffff;
-    font-family: specialElite;
-    width: 100%;
-    text-align: center;
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: specialElite;
+  width: 100%;
+  text-align: center;
 }
 
 .icons{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-  /*End Drawing Page*/
+/*End Drawing Page*/
 
-  .image-frame {
-    background-image: url('frames/frame-circle.png');
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.image-frame {
+  background-image: url('frames/frame-circle.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#imageFrame > img {
+  padding: 30px;
+  width: 500px;
+  height: 500px;
+}
+@media (max-width: 1400px) {
   #imageFrame > img {
     padding: 30px;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
   }
-  @media (max-width: 1400px) {
-    #imageFrame > img {
-      padding: 30px;
-      width: 400px;
-      height: 400px;
-    }
-  }
-  @media (max-width: 1200px) {
-    #imageFrame > img {
-      padding: 30px;
-      width: 300px;
-      height: 300px;
-    }
-  }
-  
-  /*Original Pop Up*/
-  .original-popup{
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 10;
+}
+@media (max-width: 1200px) {
+  #imageFrame > img {
+    padding: 30px;
+    width: 300px;
+    height: 300px;
   }
 
-  .original-popup .original{
-    background-image: url(frames/wood-medium.png);
-    width: 50%;
-    min-height: 33%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-position: center;
-    background-size: cover;
-  }
-  .original-popup .original img { 
-    height: auto;
-    width: 55%;
-  }
-  .original-popup #original-text{
-    color:white;
-    align-self: start;
-    position: relative;
-  }
-  .original-popup  button { 
-    position: relative;
-    padding: 10px 20px;
-    cursor: pointer;
-    bottom: auto;
-    right: 0px;
-    border-radius: 10%;
-  }
-  .bt-slideChoose{
-    align-self: end;
-  }
+.grid {
+  width: 55%;
+}
 
-  /*Help Pop Up*/
-  .help-popup{
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 10;
-  }
+#magicaContainer {
+  position: relative;
+  margin: auto;
+}
 
-  .help-popup .help{
-    background-color: black;
-    width: 50%;
-    min-height: 33%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-position: center;
-    background-size: cover;
-  }
-  .help-popup .help-content img { 
-    height: 35px;
-  }
-  .help-popup #original-text{
-    color:white;
-    align-self: start;
-    position: relative;
-  }
-  .pairInfo{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-  }
-  .pairInfo .text{
-    color: white;
-    font-family: specialElite;
-  }
+#magicaContainer img#projectorBanner {
+  height: 120%;
+  width: 100%;
+}
 
-  #undoI, #redoI{
-    height: 20px;
-  }
-  .help-popup  button { 
-    position: relative;
-    padding: 10px 20px;
-    cursor: pointer;
-    bottom: auto;
-    right: 0px;
-    border-radius: 10%;
-    color: black;
-    background-color: white;
-    font-family: specialElite;
-    border: 1px solid gray;
-  }
+#slideChoose {
+gap:50px;
+}
 
-  .custom-cursor-area {
-    width: 100vw;
-    height: 100vh;
-    cursor: url('Icons/paint.png') 0 0, auto; /* Adjust the 0 0 values to match the tip of your cursor image */
+#app{
+width: 95%;
+}
+
+.menu-img {
+height: 35px;
+}
+
+.container-title {
+font-size: 30px;
+text-align: center;
+}
+}
+
+/*Original Pop Up*/
+.original-popup{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.original-popup .original{
+  background-image: url(frames/wood-medium.png);
+  width: 50%;
+  min-height: 33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.original-popup .original img { 
+  height: auto;
+  width: 55%;
+}
+.original-popup #original-text{
+  color:white;
+  align-self: start;
+  position: relative;
+}
+.original-popup  button { 
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  bottom: auto;
+  right: 0px;
+  border-radius: 10%;
+}
+.bt-slideChoose{
+  align-self: end;
+}
+
+/*Help Pop Up*/
+.help-popup{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.help-popup .help{
+  background-color: black;
+  width: 50%;
+  min-height: 33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-position: center;
+  background-size: cover;
+}
+.help-popup .help-content img { 
+  height: 35px;
+}
+.help-popup #original-text{
+  color:white;
+  align-self: start;
+  position: relative;
+}
+.pairInfo{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.pairInfo .text{
+  color: white;
+  font-family: specialElite;
+}
+
+#undoI, #redoI{
+  height: 20px;
+}
+.help-popup  button { 
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  bottom: auto;
+  right: 0px;
+  border-radius: 10%;
+  color: black;
+  background-color: white;
+  font-family: specialElite;
+  border: 1px solid gray;
+}
+
+.custom-cursor-area {
+  width: 100vw;
+  height: 100vh;
+  cursor: url('Icons/paint.png') 0 0, auto; /* Adjust the 0 0 values to match the tip of your cursor image */
 }

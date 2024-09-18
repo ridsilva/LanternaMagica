@@ -177,7 +177,7 @@ window.onclick = function(event) {
 window.ontouchend = function(event) { 
   
   if(event.target.matches('#myCanvas')){
-    alert("Touched")
+    //alert("Touched")
      //ensure that lines go back to normal
      let now = pg.get();
      let vaux = ct.get();

@@ -71,7 +71,7 @@ function keyPressed(){
       saveGif('animation.gif', 2,{silent:true});
     }
     else{
-          saveCanvas("myPig","png");
+          saveCanvas("myPic","png");
     }
 
   }

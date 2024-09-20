@@ -181,11 +181,8 @@ function monster(backColor){
     maskImages(arr, arrM);
     clearTransformations(backColor);
 
-    pg.push();
-        pg.scale(-1,1);
-        pg.image(person, -370,0,width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
-        firstImg = pg.get();
-    pg.pop();
+    pg.image(person, 0, 0,width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+    firstImg = pg.get();
 
     pg.image(monster, 0, 0,width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
 

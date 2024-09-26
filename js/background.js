@@ -1,6 +1,7 @@
 let st;
 
 function changeBackgroundImage(nameImg){
+    st = new MyStack(3);
     pg.clear();
     
     for(i = 0; i < imageFiles.length; i++){
@@ -11,21 +12,19 @@ function changeBackgroundImage(nameImg){
       }
         
     }
-
+    pg.background(255);
     pg.image(img, 0, 0, width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+    ct.image(contour, 0, 0, width, height, 0, 0, contour.width, contour.height, CONTAIN, CENTER, CENTER);
+    
+    let aux = pg.get();
+    st.action(aux);
   }
 
   function drawBackground(){
     
     if(backgroundD === 0){
-      st = new MyStack(3);
       changeBackgroundImage(imgName);
-      ct.image(contour, 0, 0, width, height, 0, 0, contour.width, contour.height, CONTAIN, CENTER, CENTER);
-
-      let aux = pg.get();
-      st.action(aux);
-
-      backgroundD = 1;
+      backgroundD = 1;      
     }
   }
 

@@ -111,6 +111,7 @@ function setup() {
 
     myCanvas.parent("canvasContainer");
     myCanvas.id("myCanvas")
+    attachCanvasListeners(canvas);
 
     pg = createGraphics(canvasWidth,canvasHeight);
     ct = createGraphics(canvasWidth,canvasHeight);
@@ -155,24 +156,16 @@ function draw() {
 
 function mouseDragged(){
   if(!isEraser){
-    //mixColor();
+    if(mixOn.checked){
+      mixColor();
+    }
   }  
 }
 
 function mousePressed() {
-  //console.log(isInPopUp);
-  //console.log(mouseX, mouseY)
-  //let hl = pg.get(mouseX,mouseY);
-  //console.log(hl)
-  //console.log(elements)
-  //console.log(actvElements)
-  //console.log(allElements)
-  
-
   if(isInPopUp==false){
     if(mode != "projector"){
       drawing = true;
-      //console.log("Not projector")
     }else{
       drawing = false;
     }
@@ -183,14 +176,23 @@ function mousePressed() {
     
 
     if(mode === "fill") {
-      mixColor();
+      if(mixOn.checked){
+        mixColor();
+      } 
+      //
       pg.loadPixels();
       let targetColor = pg.get(mouseX,mouseY);
-      floodFill(mouseX,mouseY,targetColor);
-      pg.updatePixels();
+      try{
+        floodFill(mouseX,mouseY,targetColor);
+        pg.updatePixels();
+      }catch (error) {
+        let mess = messageFlood[currentLanguage];
+        alert(mess)
+      }
     }
   }  
 }
+
 
 function mouseReleased () {
   if(isInPopUp==false){
@@ -227,10 +229,10 @@ function restart(){
   if(pg!= null){
       clearInterval(intervalId);
       intervalId = null;
-      //proj.removeEventListener("click", handleClick);
       pg.clear();
       ct.clear();
       mode = "initial";
+      mixOn.checked = false;
       lineWeight.value = 1;  
       removeElem();          
       document.getElementById('colorPalettePopup').classList.remove("d-block");

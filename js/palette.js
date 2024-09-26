@@ -37,7 +37,7 @@ const paletteItaly = ['rgb(17, 17, 10)', 'rgb(83, 35, 5)', 'rgb(22, 47, 1)', 'rg
         currentPalette = paletteItaly;
        }
    
-       displayPalette()
+       displayPalette();
    }
 
    /*Function that changes the colors in the palette used to paint based on currentPalette*/
@@ -78,7 +78,8 @@ const paletteItaly = ['rgb(17, 17, 10)', 'rgb(83, 35, 5)', 'rgb(22, 47, 1)', 'rg
     let b = blue(c);
     selectedColor.style.backgroundColor = c;
     currentColor = color(r,g,b);
-    pg.stroke(currentColor)
+    pg.stroke(currentColor);
+    clickCount =  0;
     document.getElementById('selectedColor').classList.remove("d-none");
    });
   });

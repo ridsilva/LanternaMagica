@@ -174,9 +174,21 @@ window.onclick = function(event) {
   }
 }
 
+function attachCanvasListeners(canvas) {
+  canvas.addEventListener('touchstart', handleTouch, { passive: false });
+  canvas.addEventListener('touchmove', handleTouch, { passive: false });
+  canvas.addEventListener('touchend', handleTouch, { passive: false });
+}
+
+function handleTouch(event) {
+  event.preventDefault();  // Prevent scrolling and other touch defaults
+}
+
+
 window.ontouchend = function(event) { 
   
   if(event.target.matches('#myCanvas')){
+    event.preventDefault();
     //alert("Touched")
      //ensure that lines go back to normal
      let now = pg.get();
@@ -188,25 +200,3 @@ window.ontouchend = function(event) {
      st.action(aux);
   }
 }
-/**
-document.addEventListener('DOMContentLoaded', function() {
-  const canvas = document.querySelector('#canvasContainer');
-
-  if (canvas) {
-    // Attach the 'touchend' event listener only to the canvas
-    console.log("INSIDE")
-    canvas.addEventListener('touchend', touchEnded);
-  } else {
-    console.error('Canvas element not found!');
-  }
-});
-
-function touchEnded(event) {
-  // Make sure the touch event is happening on the canvas
-  if (event.target.matches('#myCanvas')) {
-    alert("Touch ended on canvas!");
-    
-    // Prevent default touch behavior (optional, if necessary)
-    event.preventDefault();
-  }
-}**/

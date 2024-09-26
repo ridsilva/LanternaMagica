@@ -1,8 +1,14 @@
 let intervalId;
+let clickCount = 0;
 
 const message = {
     pt: "Se a paleta for mudada, todo o trabalho realizado vai ser desfeito!",
     en: "If you change the palette, the drawing will be reset!"
+}
+
+const messageFlood = {
+  pt: "O fundo não pode ser preenchido",
+  en: "Fill cannot be used in the background!"
 }
 
 /* Event Listeners */  
@@ -122,5 +128,22 @@ const message = {
       }
     }
 
+  })
+
+  //Pipette
+  pipeta.addEventListener("click", function(){
+    if(mode != "projector" && mode!= "initial" && clickCount < 3){
+      let aux = 0.25
+      let r = red(currentColor);
+      let g = green(currentColor);
+      let b = blue(currentColor);
+      let auxC = [255,255,255,250]
+      currentColor = mixbox.lerp(currentColor, auxC, aux);
+      selectedColor.style.backgroundColor = currentColor;
+      pg.stroke(currentColor)
+
+      clickCount++;
+    }
+    
   })
   /* This ends here*/

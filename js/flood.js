@@ -1,3 +1,6 @@
+let startTime; // To keep track of the start time
+const TIME_LIMIT = 1500; // Time limit in milliseconds
+
 let directions =[
     [-1,0],
     [1,0],
@@ -6,11 +9,22 @@ let directions =[
   ];
 
 function floodFill(x,y,colour) {
-    let stack = [{x:Math.round(x),y:Math.round(y),colour}];
-    pg.set(Math.round(x),Math.round(y),currentColor);
-    let checked = Array(width).fill().map(()=>Array(height).fill(false));
+  startTime = Date.now();
+  let stack = [{x:Math.round(x),y:Math.round(y),colour}];
+  pg.set(Math.round(x),Math.round(y),currentColor);
+  let checked = Array(width).fill().map(()=>Array(height).fill(false));
+  floodFillRecursion(stack, checked, colour);
+}
+
+  function floodFillRecursion(stack, checked, colour) {
  
     while (stack.length>0) {
+      if (Date.now() - startTime > TIME_LIMIT) {
+        console.log("Flood fill aborted due to time limit.");
+        throw new Error("Too long")
+        return; // Abort if time limit exceeded
+      }
+
      let current = stack.pop();
      if(current.x<0 || current.x>=width || current.y<0 || current.y>=height)
       continue;

@@ -13,6 +13,7 @@ const languageData = {
     'IconBrush': 'Brush',
     'IconFill': 'Fill',
     'IconEraser': 'Eraser',
+    'IconPipette': 'Tint',
     'ContainerC': 'Colors',
     'IconPalette': 'Palette',
     'ContainerA': 'Actions',
@@ -24,7 +25,8 @@ const languageData = {
     'redoH': 'This icon allows the user to redo what was undone. It is only possible to redo if an undo had been previously been done.',
     'finalH': 'Clicking in "Final" will animate the painting.',
     'saveH': 'If you press the "s" key before clicking "Final," only an image will be saved. After clicking "Final," a GIF will be saved.',
-    'colorsH': 'You are able to mix colors in the fill option.'
+    'colorsH': 'You are able to mix colors in the fill and brush tools if the Mix box is checked.',
+    'mixLabel': 'Mix'
   },
   'pt': {
     'magicaProj': 'Projeto MAGICA',
@@ -38,6 +40,7 @@ const languageData = {
     'IconBrush': 'Pincel',
     'IconFill': 'Preencher',
     'IconEraser': 'Borracha',
+    'IconPipette': 'Clarear',
     'ContainerC': 'Cores',
     'IconPalette': 'Paleta',
     'ContainerA': 'Ações',
@@ -49,7 +52,8 @@ const languageData = {
     'redoH': 'Este ícon permite ao utilizador refazer aquilo que foi desfeito. Apenas é possível refazer se primeiro tiver ocorrido um retrocesso.',
     'finalH': 'Ao clicar em "Final" a pintura vai ser animada.',
     'saveH': 'Se clicar na tecla "s" antes de clicar em "Final", apenas uma imagem será guardada. Após clicar em "Final", será guardado um GIF.',
-    'colorsH': 'É possível misturar cores com a ferramenta preencher.'
+    'colorsH': 'É possível misturar cores nas ferramentas de preenchimento e pincel se a caixa de Mistura estiver selecionada.',
+    'mixLabel': 'Mix'
   }
 };
 
@@ -68,6 +72,7 @@ function loadLanguage(lang) {
     IconBrush: 'IconBrush',
     IconFill: 'IconFill',
     IconEraser: 'IconEraser',
+    IconPipette: 'IconPipette',
     ContainerC: 'ContainerC',
     IconPalette: 'IconPalette',
     ContainerA: 'ContainerA',
@@ -79,7 +84,8 @@ function loadLanguage(lang) {
     redoH: 'redoH',
     finalH: 'finalH',
     saveH: 'saveH',
-    colorsH: 'colorsH'
+    colorsH: 'colorsH',
+    mixLabel: 'mixLabel'
     // Add other elements that need to be updated here
   };
 

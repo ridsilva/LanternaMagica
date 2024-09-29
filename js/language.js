@@ -53,7 +53,7 @@ const languageData = {
     'finalH': 'Ao clicar em "Final" a pintura vai ser animada.',
     'saveH': 'Se clicar na tecla "s" antes de clicar em "Final", apenas uma imagem será guardada. Após clicar em "Final", será guardado um GIF.',
     'colorsH': 'É possível misturar cores nas ferramentas de preenchimento e pincel se a caixa de Mistura estiver selecionada.',
-    'mixLabel': 'Mix'
+    'mixLabel': 'Mistura'
   }
 };
 

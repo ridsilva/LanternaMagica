@@ -163,6 +163,7 @@ window.onclick = function(event) {
   if(event.target.matches('#myCanvas')){
     if(mouseReleased){
       //ensure that lines go back to normal
+      auxCanvas();
       let now = pg.get();
       let vaux = ct.get();
       now.blend(vaux, 0, 0, width, height, 0, 0, pix, pix, BLEND);
@@ -191,6 +192,7 @@ window.ontouchend = function(event) {
     event.preventDefault();
     //alert("Touched")
      //ensure that lines go back to normal
+     auxCanvas();
      let now = pg.get();
      let vaux = ct.get();
      now.blend(vaux, 0, 0, width, height, 0, 0, pix, pix, BLEND);

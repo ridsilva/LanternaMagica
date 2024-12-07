@@ -2,9 +2,17 @@ let chSlide = 0;
 let pix = 1200;
 let ctAux;
 
+function auxCanvas(){
+    let canvasEl = document.getElementById("myCanvas");
+    let canvasElHeight = canvasEl.getAttribute('height');
+  
+    pix = canvasElHeight;
+}
+
 function transitionImg(){
     let backColor = pg.get(0,0);
     ctAux = ct.get();
+    auxCanvas();
 
     if(imgName == "image0.png"){
         genie(backColor);
@@ -102,12 +110,12 @@ function flowers(backColor){
     let aux;
    
     pg.push();
-        pg.image(flowers, 0, 0, width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+        pg.image(flowers, 0, 0, width, height, 0, 0, img.width*2, img.height*2, CONTAIN, CENTER, CENTER);
         pg.filter(INVERT);
         aux = pg.get();
     pg.pop();
 
-    pg.image(aux, 0, 0,width, height, 0, 0, img.width, img.height, CONTAIN, CENTER, CENTER);
+    pg.image(aux, 0, 0,width, height, 0, 0, img.width*2, img.height*2, CONTAIN, CENTER, CENTER);
 
     sndImg = pg.get();
 }

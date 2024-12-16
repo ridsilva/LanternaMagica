@@ -3,7 +3,7 @@
 {
     "name": "Lanterna Magica",
     "short_name": "Magica",
-    "start_url": "./LanternaMagica/index.html",
+    "start_url": "./index.html",
     "icons": [
       {
         "src": "/LanternaMagica/homePage/manifest1.png",

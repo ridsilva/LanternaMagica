@@ -3,7 +3,7 @@
 {
     "name": "Lanterna Magica",
     "short_name": "Magica",
-    "start_url": "ridsilva.github.io/LanternaMagica/index.html",
+    "start_url": "./LanternaMagica/index.html",
     "icons": [
       {
         "src": "/homePage/manifest1.png",

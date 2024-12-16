@@ -7,8 +7,8 @@ const message = {
 }
 
 const messageFlood = {
-  pt: "O fundo não pode ser preenchido",
-  en: "Fill cannot be used in the background!"
+  pt: "O fundo não pode ser preenchido. Tenta outra ferramenta de desenho.",
+  en: "Fill cannot be used. Try another painting tool."
 }
 
 /* Event Listeners */  

@@ -6,12 +6,12 @@
     "start_url": "./index.html",
     "icons": [
       {
-        "src": "/LanternaMagica/homePage/manifest1.png",
+        "src": "./homePage/manifest1.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/LanternaMagica/homePage/manifest.png",
+        "src": "./homePage/manifest.png",
         "sizes": "512x512",
         "type": "image/png"
       }

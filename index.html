@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js"></script>
     <script src="https://scrtwpns.com/mixbox.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="manifest" href="/manifest.webmanifest">
 </head>
 <body>
 
@@ -338,7 +339,7 @@
   </div>
   <!--End of palette used to paint-->  
 
- <button id="helpBt" class="wood-button" onclick="showHelp()">?</button>
+ <button id="helpBt" class="wood-button hlpButton" onclick="showHelp()">?</button>
   <button id="finalBt" class="wood-button" onclick="final()">Final</button>
   <button id="endBt" class="wood-button" onclick="end()">Leave</button>
   <button id="originalBt" class="wood-button" onclick="showOriginal()">Original</button>
@@ -354,8 +355,8 @@
  <script src="js/animation.js"></script>
  <script src="js/language.js"></script>
  <script src="js/details.js"></script>
- <script src="js/mix.js"></script>
  <script src="js/stack.js"></script>
+ <script src="sw.js"></script>
 
 </body>
 </html>
